@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Calculator',
-      theme: ThemeData.light(), // Light theme
-      darkTheme: ThemeData.dark(), // Dark theme
-      themeMode: ThemeMode.system, // Uses system theme
+      theme: ThemeData.light(), 
+      darkTheme: ThemeData.dark(), 
+      themeMode: ThemeMode.system, 
       home: CalculatorScreen(),
     );
   }
@@ -24,8 +24,8 @@ class CalculatorScreen extends StatefulWidget {
 }
 
 class _CalculatorScreenState extends State<CalculatorScreen> {
-  String _output = "0"; // Display value
-  String _expression = ""; // Internal expression to evaluate
+  String _output = "0";
+  String _expression = ""; 
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +36,11 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           IconButton(
             icon: Icon(Icons.wb_sunny),
             onPressed: () {
-              // Optional: Implement theme change logic
             },
           ),
           IconButton(
             icon: Icon(Icons.nights_stay),
             onPressed: () {
-              // Optional: Implement theme change logic
             },
           ),
         ],
@@ -73,7 +71,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       flex: 2,
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4, // 4 buttons per row
+          crossAxisCount: 4, 
           mainAxisSpacing: 10.0,
           crossAxisSpacing: 10.0,
         ),
@@ -94,11 +92,11 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       backgroundColor: MaterialStateProperty.resolveWith<Color?>(
         (Set<MaterialState> states) {
           if (states.contains(MaterialState.pressed)) {
-            return Colors.orange; // Button color when pressed
+            return Colors.orange; 
           } else if (buttonText == '=') {
-            return Colors.orange; // Button color for "="
+            return Colors.orange; 
           } else {
-            return Colors.grey[200]; // Default button color
+            return Colors.grey[200]; 
           }
         },
       ),
@@ -151,8 +149,6 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     return "Error";
   }
 }
-
-  // List of buttons for the calculator
   final List<String> buttons = [
     'AC', '⌫', '%', '÷',
     '7', '8', '9', '×',
